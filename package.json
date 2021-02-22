@@ -1,0 +1,14 @@
+{
+  "name": "tmobot",
+  "version": "1.0.0",
+  "description": "tmo bot",
+  "main": "bot.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "nugget",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^12.5.1"
+  }
+}
