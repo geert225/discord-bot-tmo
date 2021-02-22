@@ -4,7 +4,7 @@
 # how to setup
 create a file named 'token.json' in the root folder.
 
-use tis struckt in the file:
+use tis struct in the file:
 
 **{**
   **"token": "Your discord token"**
