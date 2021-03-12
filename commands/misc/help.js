@@ -14,14 +14,20 @@ module.exports = {
       .setColor('RANDOM')
       .setFooter('©Geert225 2021-2021', '')
       .addFields({
-        name: `${prefix}help`,
+        name: `${prefix}help (${prefix}commands)`,
         value: 'Help menu for commands.',
       }, {
-        name: `${prefix}online`,
+        name: `${prefix}online (${prefix}list)`,
         value: 'shows how many members are online in a guild.',
       }, {
         name: `${prefix}ping`,
         value: 'test pong command.',
+      }, {
+        name: `${prefix}avatart (${prefix}profielfoto, ${prefix}pf)`,
+        value: 'laat je de avatar zien van een member.',
+      }, {
+        name: `${prefix}gm (${prefix}goodmorning, ${prefix}goedemorgen)`,
+        value: 'gm command.',
       } )
       .setTimestamp();
   

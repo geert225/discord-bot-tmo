@@ -20,7 +20,7 @@ client.on('ready', () => {
   console.log(`Started at:    ${currentdate}`);
   console.log(`Logged in as:  ${client.user.tag}`);
   console.log(`Client ID:     ${client.user.id}`);
-  client.user.setActivity(`Nugget bot. gebruik ${prefix}help voor help` , { type: 'PLAYING' });
+  client.user.setActivity(`Nugget bot | Gebruik ${prefix}help voor help` , { type: 'PLAYING' });
 
   //command handeler
   const baseFile = 'command-base.js'
