@@ -14,7 +14,7 @@ module.exports = {
       .setColor('RANDOM')
       .setFooter('©Geert225 2021-2021', '')
       .addFields({
-        name: `${prefix}help (${prefix}commands)`,
+        name: `${prefix}help (${prefix}commands, ${prefix}halp) `,
         value: 'Help menu for commands.',
       }, {
         name: `${prefix}online (${prefix}list)`,
@@ -40,6 +40,9 @@ module.exports = {
       }, {
         name: `${prefix}frituurpan`,
         value: 'kijk uit het vet is heet.',
+      }, {
+        name: `${prefix}badrock`,
+        value: 'mmmmmmm?',
       } )
       .setTimestamp();
   
