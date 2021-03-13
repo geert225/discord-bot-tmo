@@ -31,6 +31,12 @@ module.exports = {
       }, {
         name: `${prefix}clear (${prefix}delete, ${prefix}deletebulk)`,
         value: 'clear command.',
+      }, {
+        name: `${prefix}ban`,
+        value: 'ban command.',
+      }, {
+        name: `${prefix}kick`,
+        value: 'kick command.',
       } )
       .setTimestamp();
   
