@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 const fs = require('fs')
 const { prefix } = require("../../config.json");
 module.exports = {
-    commands: ['help', 'commands'],
+    commands: ['help', 'commands', 'halp'],
     expectedArgs: '',
     permissionError: 'You need admin permissions to run this command',
     minArgs: 0,
@@ -37,6 +37,9 @@ module.exports = {
       }, {
         name: `${prefix}kick`,
         value: 'kick command.',
+      }, {
+        name: `${prefix}frituurpan`,
+        value: 'kijk uit het vet is heet.',
       } )
       .setTimestamp();
   
