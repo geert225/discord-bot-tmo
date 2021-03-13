@@ -28,6 +28,9 @@ module.exports = {
       }, {
         name: `${prefix}gm (${prefix}goodmorning, ${prefix}goedemorgen)`,
         value: 'gm command.',
+      }, {
+        name: `${prefix}clear (${prefix}delete, ${prefix}deletebulk)`,
+        value: 'clear command.',
       } )
       .setTimestamp();
   

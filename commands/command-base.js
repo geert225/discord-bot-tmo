@@ -124,7 +124,7 @@
            (maxArgs !== null && arguments.length > maxArgs)
          ) {
            message.reply(
-             `Incorrect syntax! Use ${prefix}${alias} ${expectedArgs}`
+             `Verkeerd command gebruik: ${prefix}${alias} ${expectedArgs}`
            )
            return
          }
