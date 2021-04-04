@@ -23,7 +23,7 @@ client.on('ready', () => {
   client.user.setActivity(`Nugget bot | Gebruik ${prefix}help voor help` , { type: 'PLAYING' });
 
   //command handeler
-  const baseFile = 'command-base.js'
+  const baseFile = 'command-handler.js'
   const commandBase = require(`./commands/${baseFile}`)
 
   const readCommands = (dir) => {
@@ -42,6 +42,38 @@ client.on('ready', () => {
   readCommands('commands')
 });
 
+//level system
+client.on('message', async (message) => {
+  if (message.author.bot) return;
+if(!userdata[message.author.id]){
+  userdata[message.author.id] = {
+    level: 0,
+    xp: 0,
+    card: 0
+ }
+ console.log(userdata[message.author.id])
+ fs.writeFile("./userdata.json", JSON.stringify(userdata), (err) => {
+   if(err) console.log(err)
+ })}
+
+  if (message.author.bot) return;
+  if (!message.guild) return;
+ let xpadd = Math.floor(Math.random() * 7) + 12;
+ 
+ let curxp = userdata[message.author.id].xp;
+ let curlvl = userdata[message.author.id].level;
+ let nxtlvl = userdata[message.author.id].level * 800;
+ userdata[message.author.id].xp = curxp + xpadd;
+ if(nxtlvl <= userdata[message.author.id].xp){
+  userdata[message.author.id].level = curlvl +1;
+  message.channel.send(`${message.author}, You have leveld up! New level:**${curlvl}**`)
+ }
+
+ fs.writeFile("./userdata.json", JSON.stringify(userdata), (err) => {
+  if(err) console.log(err)}
+  )
+ 
+ });
 
 
 client.login(token);

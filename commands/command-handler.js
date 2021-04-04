@@ -1,12 +1,4 @@
-/**
- * NOTE:
- *  Some parts of this code have been improved since the original command base video.
- *  This file should still work as expected, however if you are learning the inner workings of
- *  this file then expect the file to be slightly different than in the video.
- */
-
  const { prefix } = require('../config.json')
-
  const validatePermissions = (permissions) => {
    const validPermissions = [
      'CREATE_INSTANT_INVITE',
@@ -41,14 +33,12 @@
      'MANAGE_WEBHOOKS',
      'MANAGE_EMOJIS',
    ]
- 
-   for (const permission of permissions) {
+  for (const permission of permissions) {
      if (!validPermissions.includes(permission)) {
        throw new Error(`Unknown permission node "${permission}"`)
      }
    }
  }
- 
  module.exports = (client, commandOptions) => {
    let {
      commands,
@@ -61,14 +51,10 @@
      callback,
    } = commandOptions
  
-   // Ensure the command and aliases are in an array
    if (typeof commands === 'string') {
      commands = [commands]
    }
- 
    console.log(`command geregistreed: "${commands[0]}"`)
- 
-   // Ensure the permissions are in an array and are all valid
    if (permissions.length) {
      if (typeof permissions === 'string') {
        permissions = [permissions]
@@ -76,9 +62,7 @@
  
      validatePermissions(permissions)
    }
- 
-   // Listen for messages
-   client.on('message', (message) => {
+  client.on('message', (message) => {
      const { member, content, guild } = message
  
      for (const alias of commands) {
@@ -88,9 +72,7 @@
          content.toLowerCase().startsWith(`${command} `) ||
          content.toLowerCase() === command
        ) {
-         // A command has been ran
- 
-         // Ensure the user has the required permissions
+         
          for (const permission of permissions) {
            if (!member.hasPermission(permission)) {
              message.reply(permissionError)
@@ -98,7 +80,6 @@
            }
          }
  
-         // Ensure the user has the required roles
          for (const requiredRole of requiredRoles) {
            const role = guild.roles.cache.find(
              (role) => role.name === requiredRole
@@ -112,13 +93,10 @@
            }
          }
  
-         // Split on any number of spaces
+         
          const arguments = content.split(/[ ]+/)
- 
-         // Remove the command which is the first index
          arguments.shift()
- 
-         // Ensure we have the correct number of arguments
+         
          if (
            arguments.length < minArgs ||
            (maxArgs !== null && arguments.length > maxArgs)
@@ -129,7 +107,7 @@
            return
          }
  
-         // Handle the custom command code
+         
          callback(message, arguments, arguments.join(' '), client)
  
          return
