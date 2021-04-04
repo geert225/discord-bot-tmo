@@ -3,6 +3,7 @@ const client = new Discord.Client();
 const path = require('path')
 const fs = require('fs')
 const config = require("./config.json");
+const userdata = require('./userdata');
 const { token } = require("./token.json");
 
 
