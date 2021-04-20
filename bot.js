@@ -22,6 +22,7 @@ client.on('ready', () => {
   console.log(`Logged in as:  ${client.user.tag}`);
   console.log(`Client ID:     ${client.user.id}`);
   client.user.setActivity(`Nugget bot | Gebruik ${prefix}help voor help` , { type: 'PLAYING' });
+  
 
   //command handeler
   const baseFile = 'command-handler.js'
@@ -34,8 +35,12 @@ client.on('ready', () => {
       if (stat.isDirectory()) {
         readCommands(path.join(dir, file))
       } else if (file !== baseFile) {
-        const option = require(path.join(__dirname, dir, file))
+        const filename = path.join(__dirname, dir, file)
+        if (filename.split('.').pop() === "js"  ){
+          const option = require(filename)
         commandBase(client, option)
+        }else {console.log(`overig bestand gevonden: "${file}"`)}
+        
       }
     }
   }
