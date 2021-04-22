@@ -11,8 +11,8 @@ use tis struct in the file:
 **}**
 
 Run in the root the command **"npm install"** and then install the folowing packages
- **-**discord.js
- **-**mojang-api
- **-**canvacord
- **-**dotenv
+> discord.js
+> mojang-api
+> canvacord
+> dotenv
 Now you can start the bot by using the command **"node ."** or **"node bot.js "** in root.
