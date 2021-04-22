@@ -3,6 +3,10 @@
 
 # how to setup
 ## easy setup
+run the setup.bat 2x if you have not node js installed
+run the setup.bat 1x if you have node js
+
+next start the bot by running the start.bat file
 ## advanced setup
 create a file named 'token.json' in the root folder.
 
